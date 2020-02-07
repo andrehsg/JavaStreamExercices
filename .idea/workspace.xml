@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="171cd0e7-aa45-4fc4-ba67-04b7053031eb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1XTuscnqHs9cthFklfNwV1L8FpD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.1285047" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="JUnit.Exercises.ex07_joinStreamRange">
+    <configuration name="Exercises.ex03_upcaseAllWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lambda_Lab-EclipseCon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.Exercises" />
+      <option name="METHOD_NAME" value="ex03_upcaseAllWords" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exercises.ex04_stringifyMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lambda_Lab-EclipseCon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.Exercises" />
+      <option name="METHOD_NAME" value="ex04_stringifyMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exercises.ex05_mapOfStringLengths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lambda_Lab-EclipseCon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.Exercises" />
+      <option name="METHOD_NAME" value="ex05_mapOfStringLengths" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exercises.ex06_upcaseOddLengthWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lambda_Lab-EclipseCon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.Exercises" />
+      <option name="METHOD_NAME" value="ex06_upcaseOddLengthWords" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exercises.ex07_joinStreamRange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lambda_Lab-EclipseCon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.Exercises" />
+      <option name="METHOD_NAME" value="ex07_joinStreamRange" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Exercises.ex07_joinStreamRange" />
+        <item itemvalue="JUnit.Exercises.ex06_upcaseOddLengthWords" />
+        <item itemvalue="JUnit.Exercises.ex05_mapOfStringLengths" />
+        <item itemvalue="JUnit.Exercises.ex04_stringifyMap" />
+        <item itemvalue="JUnit.Exercises.ex03_upcaseAllWords" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="171cd0e7-aa45-4fc4-ba67-04b7053031eb" name="Default Changelist" comment="" />
+      <created>1581082613087</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581082613087</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2721" y="431" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581082632331">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2721" y="431" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581082632331" />
+    <state x="3213" y="111" key="#xdebugger.evaluate" timestamp="1581099897057">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="3213" y="111" key="#xdebugger.evaluate/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581099897057" />
+    <state width="1874" height="287" key="GridCell.Tab.0.bottom" timestamp="1581100179887">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="287" key="GridCell.Tab.0.bottom/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581100179887" />
+    <state width="1874" height="287" key="GridCell.Tab.0.center" timestamp="1581100179887">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="287" key="GridCell.Tab.0.center/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581100179887" />
+    <state width="1874" height="287" key="GridCell.Tab.0.left" timestamp="1581100179887">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="287" key="GridCell.Tab.0.left/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581100179887" />
+    <state width="1874" height="287" key="GridCell.Tab.0.right" timestamp="1581100179887">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="287" key="GridCell.Tab.0.right/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581100179887" />
+    <state width="1874" height="354" key="GridCell.Tab.1.bottom" timestamp="1581099984706">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.bottom/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581099984706" />
+    <state width="1874" height="354" key="GridCell.Tab.1.center" timestamp="1581099984706">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.center/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581099984706" />
+    <state width="1874" height="354" key="GridCell.Tab.1.left" timestamp="1581099984706">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.left/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581099984706" />
+    <state width="1874" height="354" key="GridCell.Tab.1.right" timestamp="1581099984706">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.right/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581099984706" />
+    <state x="2363" y="116" width="1024" height="845" key="SettingsEditor" timestamp="1581082740634">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2363" y="116" width="1024" height="845" key="SettingsEditor/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581082740634" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/exercises/Exercises.java</url>
+          <line>68</line>
+          <properties class="exercises.Exercises" method="ex01_accumulateFirstLetters">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/exercises/Exercises.java</url>
+          <line>124</line>
+          <properties class="exercises.Exercises" method="ex04_stringifyMap">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/Exercises.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/Exercises.java</url>
+          <line>221</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/Exercises.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
