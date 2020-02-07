@@ -31,9 +31,12 @@ import java.util.HashSet;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.OptionalInt;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.function.IntConsumer;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -219,7 +222,6 @@ public class Exercises {
             .limit(4)
             .map(word -> String.valueOf(word.charAt(1)))
             .collect(Collectors.joining(","));
-        
         assertEquals("r,h,e,c", result);
     }
 
@@ -241,6 +243,7 @@ public class Exercises {
     @Test @Ignore
     public void ex08_countLinesInFile() throws IOException {
         long count = 0; // TODO
+        count = reader.lines().count();
         
         assertEquals(14, count);
     }
@@ -257,11 +260,20 @@ public class Exercises {
      * 
      * @throws IOException 
      */
-    @Test @Ignore
+    @Test
     public void ex09_findLengthOfLongestLine() throws IOException {
         int longestLength = 0; // TODO
+
+        Optional<Integer> a = reader.lines()
+            .map(String::length)
+            .sorted(Comparator.reverseOrder())
+            .findFirst();
+        //    .map(String::length)
+        //    .sorted((x,y) -> Integer.compare(x,y))
+            //.map(item -> item.length())
+            //.findFirst();
         
-        assertEquals(53, longestLength);
+        assertEquals(53, a.get().intValue());
     }
     /* Hint 1:
      * Use Stream.mapToInt() to convert to IntStream.
@@ -632,6 +644,18 @@ public class Exercises {
         
         assertEquals("tsrqponmlkjihgfedcbaabcdefghijklmnopqrst", result);
     }
+
+
+
+
+
+
+
+
+
+
+
+
     /* Hint 1:
      * The combiner function must take its second argument and merge
      * it into the first argument, mutating the first argument.
