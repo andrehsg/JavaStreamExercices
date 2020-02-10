@@ -26,17 +26,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.OptionalInt;
 import java.util.TreeMap;
-import java.util.function.Function;
-import java.util.function.IntConsumer;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -46,11 +41,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.summingInt;
+import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -240,9 +232,9 @@ public class Exercises {
      * 
      * @throws IOException
      */ 
-    @Test @Ignore
+    @Test
     public void ex08_countLinesInFile() throws IOException {
-        long count = 0; // TODO
+        long count = 0;
         count = reader.lines().count();
         
         assertEquals(14, count);
@@ -262,9 +254,8 @@ public class Exercises {
      */
     @Test
     public void ex09_findLengthOfLongestLine() throws IOException {
-        int longestLength = 0; // TODO
 
-        Optional<Integer> a = reader.lines()
+        Optional<Integer> longestLength = reader.lines()
             .map(String::length)
             .sorted(Comparator.reverseOrder())
             .findFirst();
@@ -273,7 +264,7 @@ public class Exercises {
             //.map(item -> item.length())
             //.findFirst();
         
-        assertEquals(53, a.get().intValue());
+        assertEquals(53, longestLength.get().intValue());
     }
     /* Hint 1:
      * Use Stream.mapToInt() to convert to IntStream.
@@ -288,11 +279,22 @@ public class Exercises {
      * 
      * @throws IOException 
      */
-    @Test @Ignore
+    @Test
     public void ex10_findLongestLine() throws IOException {
-        String longest = ""; // TODO
-        
-        assertEquals("Feed'st thy light's flame with self-substantial fuel,", longest);
+        Optional<String> longest;
+
+        /*
+        Solução André
+                longest = reader.lines()
+            .sorted(Comparator.comparing(String::length).reversed())
+            .findFirst();
+         */
+
+        //Melhoria....
+        longest =
+            reader.lines()
+                .max(comparingInt(String::length));
+        assertEquals("Feed'st thy light's flame with self-substantial fuel,", longest.get());
     }
     /* Hint 1:
      * Use Stream.max() with a Comparator.
@@ -306,12 +308,18 @@ public class Exercises {
      * Select the set of words from the input list whose length is greater than
      * to the word's position (starting from zero) in the list.
      */
-    @Test @Ignore
+    @Test
     public void ex11_selectByLengthAndPosition() {
         List<String> input = new ArrayList<>(Arrays.asList(
             "alfa", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel"));
         
-        List<String> result = null; // TODO
+        List<String> result;
+
+        result = IntStream.range(0, input.size())
+            .filter(i -> input.get(i).length() > i) //aplicando filtro
+            .mapToObj(index -> input.get(index)) //convertendo IntStream em um Stream de objetos
+            .collect(toList()); //convertendo pra list
+
         
         assertEquals("[alfa, bravo, charlie, delta, foxtrot]", result.toString());
     }
@@ -325,12 +333,16 @@ public class Exercises {
      * difference between the corresponding elements of the two input lists
      * (first minus second).
      */
-    @Test @Ignore
+    @Test
     public void ex12_listDifference() {
         List<Integer> one = Arrays.asList(3, 1, 4, 1, 5, 9, 2, 6, 5, 3);
         List<Integer> two = Arrays.asList(2, 7, 1, 8, 2, 8, 1, 8, 2, 8);
         
-        List<Integer> result = null; // TODO
+        List<Integer> result;
+
+        result = IntStream.range(0, one.size())
+            .mapToObj(index -> one.get(index) - two.get(index))
+            .collect(toList());
         
         assertEquals("[1, -6, 3, -7, 3, 1, 1, -2, 3, -5]", result.toString());
     }
@@ -350,13 +362,15 @@ public class Exercises {
     /**
      * Convert a list of strings into a list of characters.
      */
-    @Test @Ignore
+    @Test
     public void ex13_stringsToCharacters() {
         List<String> input = Arrays.asList("alfa", "bravo", "charlie");
-        
-        List<Character> result = null; // TODO
-        
-        assertEquals("[a, l, f, a, b, r, a, v, o, c, h, a, r, l, i, e]", result.toString());
+        List<Character> result;
+        result = input.stream()
+            .flatMap (word -> word.chars().mapToObj(character -> (char) character))
+            .collect(toList());
+        assertEquals("[a, l, f, a, b, r, a, v, o, c, h, a, r, l, i, e]",
+            result.toString());
         assertTrue(result.stream().allMatch(x -> x instanceof Character));
     }
     /* Hint 1:
@@ -374,9 +388,13 @@ public class Exercises {
      * 
      * @throws IOException
      */
-    @Test @Ignore
+    @Test
     public void ex14_listOfAllWords() throws IOException {
-        List<String> output = null; // TODO
+        List<String> output = null;
+
+        output = reader.lines()
+            .flatMap(item -> Stream.of(item.split(REGEXP)))
+            .collect(toList());
         
         assertEquals(
             Arrays.asList(
@@ -407,9 +425,18 @@ public class Exercises {
      * 
      * @throws IOException 
      */
-    @Test @Ignore
+    @Test
     public void ex15_longLowerCaseSortedWords() throws IOException {
-        List<String> output = null; // TODO
+        List<String> output;
+
+        output = reader.lines()
+            .flatMap(line -> Stream.of(line.split(REGEXP)))
+            .filter (word -> word.length() >= 8)
+            //.map (word -> word.toLowerCase())
+            .map(String::toLowerCase)
+            .sorted(Comparator.naturalOrder())
+             .collect(toList());
+
         
         assertEquals(
             Arrays.asList(
@@ -420,8 +447,7 @@ public class Exercises {
     /* Hint:
      * Use Stream.sorted().
      */
-    
-    
+
     /**
      * Read the words from the text file, and create a list containing the words
      * of length 8 or longer, converted to lower case, and sorted reverse alphabetically.
