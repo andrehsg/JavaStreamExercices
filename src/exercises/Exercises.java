@@ -34,6 +34,7 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import org.junit.After;
@@ -41,7 +42,10 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static java.util.Comparator.comparing;
 import static java.util.Comparator.comparingInt;
+import static java.util.Comparator.naturalOrder;
+import static java.util.Comparator.reverseOrder;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -455,9 +459,16 @@ public class Exercises {
      * 
      * @throws IOException 
      */
-    @Test @Ignore
+    @Test
     public void ex16_longLowerCaseReverseSortedWords() throws IOException {
-        List<String> result = null; // TODO
+        List<String> result;
+
+        result = reader.lines()
+            .flatMap(line -> Stream.of(line.split(REGEXP)))
+            .filter (word -> word.length() >= 8)
+            .map(String::toLowerCase)
+            .sorted(Comparator.reverseOrder())
+            .collect(Collectors.toList());
         
         assertEquals(
             Arrays.asList(
@@ -476,13 +487,19 @@ public class Exercises {
      * 
      * @throws IOException 
      */
-    @Test @Ignore
+    @Test
     public void ex17_sortedLowerCaseDistinctByLengthThenAlphabetically() throws IOException {
-        List<String> result = null; // TODO
-        
-        assertEquals(
-            Arrays.asList(
-                "a", "as", "be", "by", "in", "or", "to", "we",
+        List<String> result;
+        //Comparator<String> comparator = Comparator.comparing(String::length).thenComparing(naturalOrder());
+        result = reader.lines()
+            .flatMap(line -> Stream.of(line.split(REGEXP)))
+            .map(String::toLowerCase)
+            .distinct()
+            .sorted(Comparator.comparing(String::length).thenComparing(naturalOrder()))
+            //                  .sorted(comparingInt(String::length)
+            //                          .thenComparing(naturalOrder()))
+            .collect(toList());
+        assertEquals(Arrays.asList("a", "as", "be", "by", "in", "or", "to", "we",
                 "and", "art", "bud", "but", "die", "due", "eat", "foe",
                 "his", "now", "own", "the", "thy", "too", "bear", "else",
                 "eyes", "from", "fuel", "heir", "lies", "only",
@@ -509,11 +526,35 @@ public class Exercises {
      * Count the total number of words and the number of distinct, lower case
      * words in the text file, in one pass.
      */
-    @Test @Ignore
-    public void ex18_countTotalAndDistinctWords() {
-        long distinctCount = 0; // TODO
-        long totalCount = 0; // TODO
-        
+
+    @Test
+    public void ex18_countTotalAndDistinctWords() throws IOException {
+        long distinctCount = 0;
+        long totalCount = 0;
+        List<String> list = reader.lines()
+            .flatMap(line -> Stream.of(line.split(REGEXP)))
+            .collect(toList());
+       // Supplier<Stream<String>> supplier = () -> Stream.of(list);
+
+        distinctCount = list.stream()
+            .map(String::toLowerCase)
+            .distinct()
+            .count();
+
+        totalCount = list.stream()
+            .count();
+
+         /*
+        LongAdder adder = new LongAdder();
+        long distinctCount =
+            reader.lines()
+                .flatMap(line -> Stream.of(line.split(REGEXP)))
+                .map(String::toLowerCase)
+                .peek(s -> adder.increment())
+                .distinct()
+                .count();
+        long totalCount = adder.longValue();
+         */
         assertEquals("distinct count", 81, distinctCount);
         assertEquals("total count", 107, totalCount);
     }
@@ -529,15 +570,16 @@ public class Exercises {
 // ADVANCED STREAMS: REDUCTION, COLLECTORS, AND GROUPING
 // ========================================================
 
-    
     /**
      * Compute the value of 21!, that is, 21 factorial. This value is larger than
      * Long.MAX_VALUE, so you must use BigInteger.
      */
-    @Test @Ignore
+    @Test
     public void ex19_bigFactorial() {
-        BigInteger result = BigInteger.ONE; // TODO
-                        
+        BigInteger result =
+            LongStream.rangeClosed(1L, 21L)
+                .mapToObj(BigInteger::valueOf)
+                .reduce(BigInteger.ONE, BigInteger::multiply);
         assertEquals(new BigInteger("51090942171709440000"), result);
     }
     /* Hint:
